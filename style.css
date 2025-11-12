@@ -1,0 +1,184 @@
+/* Base styles */
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  background-image: url("../image choices/stormy-landscape-rembrandt-1638-2310991060.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(184, 134, 11, 0.8);
+  min-height: calc(100vh - 200px);
+  padding: 2rem;
+  margin: 100px;
+  box-sizing: border-box;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header img.photo {
+  display: block;
+  margin: 0 auto 1rem auto;
+  border-radius: 8px;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: white;
+  max-width: 900px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+nav button {
+  font-size: 1.2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: white;
+  color: darkgoldenrod;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+nav button:hover {
+  background-color: #f5deb3;
+  color: #000;
+}
+
+/* Article layout — two columns side by side */
+article {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: nowrap; /* prevent stacking on larger screens */
+}
+
+article section {
+  flex: 1 1 calc(50% - 1rem);
+  background-color: goldenrod;
+  padding: 1.5rem;
+  border-radius: 8px;
+  color: white;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  min-width: 300px;
+  text-align: left; /* center content inside sections */
+}
+
+/* Images inside sections */
+article section img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 1rem auto;
+  border-radius: 6px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(2 * (50% - 1rem) + 2rem); /* matches the two section widths + gap */
+  max-width: 1200px;
+  padding: 20px;
+  margin: 2rem auto 50px auto; /* center horizontally */
+  background-color: rgba(184, 134, 11, 0.85);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+footer img {
+  max-height: 80px;
+  margin-left: 20px; /* space from left edge */
+  width: 120px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+footer .footer-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  margin-right: 20px; /* space from right edge */
+}
+
+footer button {
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  background-color: white;
+  color: darkgoldenrod;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+footer button:hover {
+  background-color: #f5deb3;
+  color: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  /* Stack article sections */
+  article {
+    flex-direction: column;
+  }
+
+  article section {
+    flex: 1 1 100%;
+    margin-bottom: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    margin: 50px;
+    min-height: calc(100vh - 100px);
+  }
+
+  /* Footer responsive */
+  footer {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  footer img,
+  footer .footer-buttons {
+    margin: 10px 0;
+  }
+}
+
