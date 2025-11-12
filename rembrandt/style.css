@@ -28,17 +28,35 @@ header {
   margin-bottom: 2rem;
 }
 
+/* A wrapper to ensure image and text share the same width */
+header .content {
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
+}
+
 header img.photo {
   display: block;
-  margin: 0 auto 1rem auto;
+  width: 100%;
+  height: auto;
+  max-height: 500px; /* new constraint */
   border-radius: 8px;
+  margin-bottom: 1rem;
+  object-fit: cover; /* keeps image from stretching if it exceeds height */
 }
 
 header h1 {
-  font-size: 2rem;
+  font-size: clamp(1.3rem, 4vw, 2rem); /* fluid scaling */
   color: white;
-  max-width: 900px;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  margin: 0;
+}
+
+/* Optional small-screen tweak */
+@media (max-width: 480px) {
+  header {
+    margin-bottom: 1.5rem;
+  }
 }
 
 nav {
